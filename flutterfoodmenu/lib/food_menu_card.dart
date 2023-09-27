@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'food_menu_card.dart';
 
-void main() {
-  runApp(FoodMenuApp());
-}
 
 class FoodMenuApp extends StatelessWidget {
+  const FoodMenuApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: FoodMenuScreen(),
     );
   }
 }
 class FoodMenuScreen extends StatelessWidget {
+  const FoodMenuScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange,
-
-        
+        title: const Text('Cheese Pizza',
+        ),
+        backgroundColor: Colors.orange
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -30,27 +29,28 @@ class FoodMenuScreen extends StatelessWidget {
             Image.asset(
               'assets/images/pizza.png',
               width: double.infinity,
-              height: 200.0,
+              height: 250.0,
               fit: BoxFit.cover,
             ),
             SizedBox(height: 16.0),
             const Text(
               'Cheese Pizza',
               style: TextStyle(
-                fontSize: 24.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
+                color: Colors.orange
               ),
             ),
             SizedBox(height: 8.0),
             const Text(
               'A classic Cheese pizza with tomato sauce, fresh mozzarella cheese, basil leaves, and olive oil.',
-              style: TextStyle(fontSize: 16.0),
+              style: TextStyle(fontSize: 14.0),
             ),
             SizedBox(height: 16.0),
             const Text(
               'Price: \$10.99',
               style: TextStyle(
-                fontSize: 20.0,
+                fontSize: 18.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.green,
               ),

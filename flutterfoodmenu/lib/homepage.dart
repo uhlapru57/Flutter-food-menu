@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterfoodmenu/food_menu_card.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+  const Homepage({super.key,});
+
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class Homepage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.orange,
-          title: const Text('Food Menu'),
+          title: const Text('Food Menu',),
         ),
         body: FoodMenu(),
         
@@ -24,7 +25,7 @@ class FoodMenu extends StatelessWidget {
     FoodItem(
       name: 'Cheese Pizza',
       description: 'A classic Cheese pizza with tomato sauce, fresh mozzarella cheese, basil leaves, and olive oil.',
-      price: '\$11.99',
+      price: '\$10.99',
       imageAsset: 'assets/images/pizza.png',
     ),
     FoodItem(
@@ -54,6 +55,8 @@ class FoodMenu extends StatelessWidget {
     ),
   ];
 
+  FoodMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -64,9 +67,8 @@ class FoodMenu extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => FoodMenuScreen(
-                  
-                ),
+                builder: (context) => const FoodMenuScreen(
+                ), 
               ),
             );
           },
@@ -97,7 +99,7 @@ class FoodItem {
 class FoodCard extends StatelessWidget {
   final FoodItem foodItem;
 
-  const FoodCard({required this.foodItem});
+  const FoodCard({super.key, required this.foodItem});
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +125,7 @@ class FoodCard extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
+                    color: Colors.orange
                   ),
                 ),
                 const SizedBox(height: 8.0),
